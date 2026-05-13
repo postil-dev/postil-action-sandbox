@@ -16,6 +16,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run postil reviewer
-        uses: postil-dev/postil@main
+        uses: postil-dev/postil@9298df9a246d821dcc66784e78203a4e8dc9e7d0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
