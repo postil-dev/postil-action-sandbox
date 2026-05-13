@@ -1,2 +1,15 @@
 # postil-action-sandbox
-Fixture repo for exercising the postil GitHub Action in CI. Intentionally minimal; populated via a paperclip-managed ticket to a real but small Next.js / TS / Python multi-language tree that produces realistic review signals.
+
+Fixture repo for exercising the [postil](https://github.com/postil-dev/postil) AI pull-request reviewer.
+
+This repository intentionally includes realistic but harmless bugs so that every PR gives the action something to comment on. Do not use this code in production.
+
+## Intentional review signals
+
+- **Unused import**: `writeFileSync` is imported but never used.
+- **Off-by-one error**: `sumArray` iterates one index past the end of the array.
+- **Unhandled promise**: `fetchData` fires a `fetch` without awaiting or catching rejections.
+
+## CI
+
+`.github/workflows/postil-review.yml` runs the postil action on every pull request.

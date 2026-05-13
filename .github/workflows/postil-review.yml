@@ -1,0 +1,21 @@
+name: Postil Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    name: Postil Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run postil reviewer
+        uses: postil-dev/postil@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
