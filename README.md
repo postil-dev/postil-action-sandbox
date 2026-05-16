@@ -9,6 +9,7 @@ This repository intentionally includes realistic but harmless bugs so that every
 - **Unused import**: `writeFileSync` is imported but never used.
 - **Off-by-one error**: `sumArray` iterates one index past the end of the array.
 - **Unhandled promise**: `fetchData` fires a `fetch` without awaiting or catching rejections.
+- **Extra signal**: typo in `writeFileSync` so linter flags wrong arg name.
 
 ## CI
 
