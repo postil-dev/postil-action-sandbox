@@ -8,14 +8,26 @@ jobs:
   review:
     name: Postil Review
     runs-on: ubuntu-latest
+    # This fixture has no LLM key configured by default: skip quietly rather
+    # than fail every PR check red until a maintainer adds one, matching the
+    # gating pattern the main postil repo uses for its own deploy workflow.
+    if: ${{ vars.POSTIL_SANDBOX_ENABLED == 'true' }}
     permissions:
       contents: read
       pull-requests: write
+      checks: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Run postil reviewer
-        uses: postil-dev/postil@main
+        # postil-action requires a full 40-hex commit SHA of postil-dev/postil-cli
+        # (cli-ref), not a tag or branch; pin to postil-action's own main too so
+        # a fixture failure can't silently start exercising a different action
+        # version than intended. Bump both when postil-cli/postil-action cut a
+        # new release this fixture should track.
+        uses: postil-dev/postil-action@54c768dec78d43d8e79499213a01242457a0e401 # main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cli-ref: 87f4bf08b63712d3600030a7c458f0b790cfc0d5 # postil-cli v0.1.1
+          cli-release: v0.1.1
+          api-key: ${{ secrets.OPENROUTER_API_KEY }}
