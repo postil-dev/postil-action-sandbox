@@ -26,8 +26,8 @@ jobs:
         # a fixture failure can't silently start exercising a different action
         # version than intended. Bump both when postil-cli/postil-action cut a
         # new release this fixture should track.
-        uses: postil-dev/postil-action@54c768dec78d43d8e79499213a01242457a0e401 # main
+        uses: postil-dev/postil-action@9c8cf2c2f650f5946774c6d01626da507836b418
         with:
-          cli-ref: 87f4bf08b63712d3600030a7c458f0b790cfc0d5 # postil-cli v0.1.1
-          cli-release: v0.1.1
+          cli-ref: dd1381381d4791475a277333837394f2f5032d27
+          cli-release: v0.6.0
           api-key: ${{ secrets.OPENROUTER_API_KEY }}

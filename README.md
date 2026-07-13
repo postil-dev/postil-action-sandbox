@@ -1,6 +1,6 @@
 # postil-action-sandbox
 
-Fixture repo for exercising the [postil](https://github.com/postil-dev/postil) AI pull-request reviewer.
+Fixture repository for exercising the [Postil Action](https://github.com/postil-dev/postil-action).
 
 This repository intentionally includes realistic but harmless bugs so that every PR gives the action something to comment on. Do not use this code in production.
 
@@ -15,4 +15,4 @@ This repository intentionally includes realistic but harmless bugs so that every
 
 ## CI
 
-`.github/workflows/postil-review.yml` runs [postil-action](https://github.com/postil-dev/postil-action) on every pull request. It only runs when the repo variable `POSTIL_SANDBOX_ENABLED` is set to `true`, and needs an `OPENROUTER_API_KEY` repo secret to actually call a model; without both, the workflow skips instead of failing every PR check.
+`.github/workflows/postil-review.yml` runs on pull-request changes when the repository variable `POSTIL_SANDBOX_ENABLED` is `true`. It reads the model credential from the `OPENROUTER_API_KEY` repository secret. Without the opt-in variable, the fixture job is skipped.
