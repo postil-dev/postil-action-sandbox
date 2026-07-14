@@ -1,8 +1,8 @@
 # postil-action-sandbox
 
-Fixture repo for exercising the [postil](https://github.com/postil-dev/postil) AI pull-request reviewer.
+Fixture repository for testing the [Postil Action](https://github.com/postil-dev/postil-action) against known defects.
 
-This repository intentionally includes realistic but harmless bugs so that every PR gives the action something to comment on. Do not use this code in production.
+This repository contains realistic but harmless review fixtures. Pull requests that introduce or touch these signals give the action known defects to inspect. Do not use this code in production.
 
 ## Intentional review signals
 
@@ -15,4 +15,4 @@ This repository intentionally includes realistic but harmless bugs so that every
 
 ## CI
 
-`.github/workflows/postil-review.yml` runs [postil-action](https://github.com/postil-dev/postil-action) on every pull request. It only runs when the repo variable `POSTIL_SANDBOX_ENABLED` is set to `true`, and needs an `OPENROUTER_API_KEY` repo secret to actually call a model; without both, the workflow skips instead of failing every PR check.
+The hosted GitHub App owns automatic pull-request reviews. The manual `Postil Action smoke review` workflow accepts a pull-request number and exercises this repository through `postil-action` with the `OPENROUTER_API_KEY` repository secret, without adding a permanently skipped check to every pull request.
