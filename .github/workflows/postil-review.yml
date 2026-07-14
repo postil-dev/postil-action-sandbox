@@ -2,6 +2,11 @@ name: Postil Action smoke review
 
 on:
   workflow_dispatch:
+    inputs:
+      pr:
+        description: Pull request number to review
+        required: true
+        type: number
 
 jobs:
   review:
@@ -23,6 +28,7 @@ jobs:
         # new release this fixture should track.
         uses: postil-dev/postil-action@9c8cf2c2f650f5946774c6d01626da507836b418
         with:
+          pr: ${{ inputs.pr }}
           cli-ref: dd1381381d4791475a277333837394f2f5032d27
           cli-release: v0.6.0
           api-key: ${{ secrets.OPENROUTER_API_KEY }}

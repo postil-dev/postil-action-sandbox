@@ -15,4 +15,4 @@ This repository contains realistic but harmless review fixtures. Pull requests t
 
 ## CI
 
-The hosted GitHub App owns automatic pull-request reviews. The manual `Postil Action smoke review` workflow exercises this repository through `postil-action` with the `OPENROUTER_API_KEY` repository secret, without adding a permanently skipped check to every pull request.
+The hosted GitHub App owns automatic pull-request reviews. The manual `Postil Action smoke review` workflow accepts a pull-request number and exercises this repository through `postil-action` with the `OPENROUTER_API_KEY` repository secret, without adding a permanently skipped check to every pull request.
