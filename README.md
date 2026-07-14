@@ -1,6 +1,6 @@
 # postil-action-sandbox
 
-Fixture repository for exercising the [Postil Action](https://github.com/postil-dev/postil-action).
+Fixture repository for testing the [Postil Action](https://github.com/postil-dev/postil-action) against known defects.
 
 This repository contains realistic but harmless review fixtures. Pull requests that introduce or touch these signals give the action known defects to inspect. Do not use this code in production.
 
