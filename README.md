@@ -15,4 +15,4 @@ This repository contains realistic but harmless review fixtures. Pull requests t
 
 ## CI
 
-`.github/workflows/postil-review.yml` runs on pull-request changes when the repository variable `POSTIL_SANDBOX_ENABLED` is `true`. It reads the model credential from the `OPENROUTER_API_KEY` repository secret. Without the opt-in variable, the fixture job is skipped.
+The hosted GitHub App owns automatic pull-request reviews. The manual `Postil Action smoke review` workflow exercises this repository through `postil-action` with the `OPENROUTER_API_KEY` repository secret, without adding a permanently skipped check to every pull request.

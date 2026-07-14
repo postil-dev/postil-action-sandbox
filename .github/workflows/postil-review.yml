@@ -1,17 +1,12 @@
-name: Postil Review
+name: Postil Action smoke review
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  workflow_dispatch:
 
 jobs:
   review:
-    name: Postil Review
+    name: Review fixture
     runs-on: ubuntu-latest
-    # This fixture has no LLM key configured by default: skip quietly rather
-    # than fail every PR check red until a maintainer adds one, matching the
-    # gating pattern the main postil repo uses for its own deploy workflow.
-    if: ${{ vars.POSTIL_SANDBOX_ENABLED == 'true' }}
     permissions:
       contents: read
       pull-requests: write
