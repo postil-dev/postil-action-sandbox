@@ -2,7 +2,7 @@
 
 Fixture repository for exercising the [Postil Action](https://github.com/postil-dev/postil-action).
 
-This repository intentionally includes realistic but harmless bugs so that every PR gives the action something to comment on. Do not use this code in production.
+This repository contains realistic but harmless review fixtures. Pull requests that introduce or touch these signals give the action known defects to inspect. Do not use this code in production.
 
 ## Intentional review signals
 
