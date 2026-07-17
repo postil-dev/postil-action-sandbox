@@ -21,14 +21,11 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
       - name: Run postil reviewer
-        # postil-action requires a full 40-hex commit SHA of postil-dev/postil-cli
-        # (cli-ref), not a tag or branch; pin to postil-action's own main too so
-        # a fixture failure can't silently start exercising a different action
-        # version than intended. Bump both when postil-cli/postil-action cut a
-        # new release this fixture should track.
-        uses: postil-dev/postil-action@9c8cf2c2f650f5946774c6d01626da507836b418
+        # Both repositories use immutable commits. cli-release must resolve to
+        # cli-ref before the signed prebuilt binary is accepted.
+        uses: postil-dev/postil-action@00442e2340edaa4a681955dbb25e20650ca1514c
         with:
           pr: ${{ inputs.pr }}
-          cli-ref: dd1381381d4791475a277333837394f2f5032d27
-          cli-release: v0.6.0
+          cli-ref: 1dd3d82cbb2832851085045e21ecec6e937847fd
+          cli-release: v0.6.3
           api-key: ${{ secrets.OPENROUTER_API_KEY }}
