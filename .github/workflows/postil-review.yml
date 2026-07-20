@@ -23,9 +23,10 @@ jobs:
       - name: Run postil reviewer
         # Both repositories use immutable commits. cli-release must resolve to
         # cli-ref before the signed prebuilt binary is accepted.
-        uses: postil-dev/postil-action@00442e2340edaa4a681955dbb25e20650ca1514c
+        uses: postil-dev/postil-action@30e092854a34e84b57615720f4ac3611a49ea075
         with:
           pr: ${{ inputs.pr }}
-          cli-ref: fbbe0891bc302a7644c6fb2232ee5f4af587894b
-          cli-release: v0.7.1
+          cli-ref: dcf4e34c4804d4bf64705ab6367c883cea23b33a
+          cli-release: v0.7.2
+          model: openai/gpt-5-mini
           api-key: ${{ secrets.OPENROUTER_API_KEY }}
