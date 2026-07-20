@@ -28,4 +28,5 @@ jobs:
           pr: ${{ inputs.pr }}
           cli-ref: dcf4e34c4804d4bf64705ab6367c883cea23b33a
           cli-release: v0.7.2
+          model: openai/gpt-5-mini
           api-key: ${{ secrets.OPENROUTER_API_KEY }}
