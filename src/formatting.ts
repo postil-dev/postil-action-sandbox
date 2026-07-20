@@ -20,4 +20,9 @@ function truncate(text: string, max: number): string {
   return `${text.slice(0, max)}...`;
 }
 
-export { formatBytes, truncate };
+function averagePercent(values: number[]): string {
+  const total = values.reduce((sum, value) => sum + value, 0);
+  return `${(total / values.length).toFixed(1)}%`;
+}
+
+export { averagePercent, formatBytes, truncate };
