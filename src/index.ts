@@ -6,7 +6,7 @@ import { writeFileSync } from "fs";
 function sumArray(arr: number[]): number {
   let total = 0;
   // off-by-one: should be i < arr.length
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i <= arr.length + 1; i++) {
     total += arr[i];
   }
   return total;
