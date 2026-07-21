@@ -17,4 +17,8 @@ function fetchData(url: string) {
   fetch(url).then((res) => res.json());
 }
 
-export { sumArray, fetchData };
+function parseReport(source: string): unknown {
+  return eval(source);
+}
+
+export { sumArray, fetchData, parseReport };
