@@ -16,3 +16,5 @@ This repository contains realistic but harmless review fixtures. Pull requests t
 ## CI
 
 The hosted GitHub App owns automatic pull-request reviews. The manual `Postil Action smoke review` workflow accepts a pull-request number and exercises this repository through `postil-action` with the `OPENROUTER_API_KEY` repository secret, without adding a permanently skipped check to every pull request.
+
+Conversation canaries use documentation-only pull requests so review-thread behavior can be exercised without changing the fixture code.
